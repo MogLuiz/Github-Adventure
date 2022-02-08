@@ -1,6 +1,10 @@
+// Packages
 import React from "react";
 
 export default function Navbar({ theme, toogleDarkmode }) {
+  // -------------------------------------------------
+  // Return
+  // -------------------------------------------------
   return (
     <nav id="header" className="fixed w-full">
       <div
