@@ -1,11 +1,7 @@
 // Packages
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 
 // Components
-// import  CounterComponent from "./Components/Counter";
-// import FabButton from "./Components/FabButton";
-// import Navbar from "./Components/Navbar";
-
 import { CounterComponent, FabButtonComponent, NavbarComponent } from "./Components"
 
 // Services
@@ -21,7 +17,7 @@ function App() {
   // -------------------------------------------------
   // Constants
   // -------------------------------------------------
-  const likes = likesCounter(totalLikes);
+  const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 
   const theme = {
     color: dark ? "#fff" : "#333",
