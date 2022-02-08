@@ -18,13 +18,19 @@ const ReposComponent = ({ getGithubRepositorie }) => {
   // -------------------------------------------------
 
   useEffect(() => {
-      getGithubRepositorie()
+      getGithubRepositorie(query)
         .then((res) => res.json())
         .then((data) => setItems((data && data.items) || []))
-  }, [getGithubRepositorie])
+  }, [getGithubRepositorie, query])
 
   return (
     <div className="list">
+        <button
+            className="float-btn-rocket"
+            onClick={() => setQuery("rocketseat")}
+        >
+            Rocket
+        </button>
         {
             items && 
                items.map((result) => <RepositoryComponent key={result.id} {...result}/> ) 
