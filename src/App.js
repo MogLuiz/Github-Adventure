@@ -19,7 +19,7 @@ function App() {
   // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
-  const getGithubRepositorie = useCallback(() => fetch(`${URL}?q=Github-Adventure`), [])
+  const getGithubRepositorie = useCallback((query) => fetch(`${URL}?q=${query}`), [])
 
   const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 

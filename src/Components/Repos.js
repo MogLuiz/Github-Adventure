@@ -39,4 +39,4 @@ const ReposComponent = ({ getGithubRepositorie }) => {
   )
 }
 
-export default ReposComponent
+export default React.memo(ReposComponent)
