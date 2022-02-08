@@ -1,5 +1,5 @@
 // Packages
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 
 // Components
 import { CounterComponent, FabButtonComponent, NavbarComponent, ReposComponent } from "./Components"
@@ -19,8 +19,7 @@ function App() {
   // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
-
-  const getGithubRepositorie = () => fetch(`${URL}?q=facebook`)
+  const getGithubRepositorie = useCallback(() => fetch(`${URL}?q=Github-Adventure`), [])
 
   const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 
