@@ -1,5 +1,5 @@
 // Packages
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 
 // Components
 import { CounterComponent, FabButtonComponent, NavbarComponent } from "./Components"
@@ -19,11 +19,13 @@ function App() {
   // -------------------------------------------------
   const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 
-  const theme = {
+  const theme = useMemo(() => ({
     color: dark ? "#fff" : "#333",
     navbar: dark ? "#1a202c" : "#e5e7eb",
     backgroundColor: dark ? "#333" : "#fff",
-  };
+  }),[dark])
+
+  useEffect(() => console.log("Dark Theme Change"), [theme])
 
   const toogleDarkmode = () => setDark(!dark);
   // -------------------------------------------------
