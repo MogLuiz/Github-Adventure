@@ -2,7 +2,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 
 // Components
-import { CounterComponent, FabButtonComponent, NavbarComponent } from "./Components"
+import { CounterComponent, FabButtonComponent, NavbarComponent, ReposComponent } from "./Components"
 
 // Services
 import { likesCounter } from "./Services/expensiveCalculation";
@@ -20,7 +20,7 @@ function App() {
   // Hooks
   // -------------------------------------------------
 
-  const getGithubRepositorie = fetch(`${URL}?q=facebook`)
+  const getGithubRepositorie = () => fetch(`${URL}?q=facebook`)
 
   const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 
@@ -43,7 +43,7 @@ function App() {
     <div style={theme} className="App">
       <NavbarComponent theme={theme.navbar} toogleDarkmode={toogleDarkmode} />
       <CounterComponent likes={likes} />
-      {/* <Repos getGithubRepositorie={getGithubRepositorie} /> */}
+      <ReposComponent getGithubRepositorie={getGithubRepositorie} />
       <FabButtonComponent totalLikes={totalLikes} setTotalLikes={setTotalLikes} />
     </div>
   );
