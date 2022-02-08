@@ -43,6 +43,7 @@ function App() {
     <div style={theme} className="App">
       <NavbarComponent theme={theme.navbar} toogleDarkmode={toogleDarkmode} />
       <CounterComponent likes={likes} />
+      {/* <Repos getGithubRepositorie={getGithubRepositorie} /> */}
       <FabButtonComponent totalLikes={totalLikes} setTotalLikes={setTotalLikes} />
     </div>
   );
