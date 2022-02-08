@@ -1,4 +1,4 @@
-export const HeadCounter = ({ likes }) => (
+const HeadCounter = ({ likes }) => (
   // -------------------------------------------------
   // Return
   // -------------------------------------------------
@@ -6,3 +6,5 @@ export const HeadCounter = ({ likes }) => (
     <h1>Total Likes {likes}</h1>
   </div>
 );
+
+export default HeadCounter

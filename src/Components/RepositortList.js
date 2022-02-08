@@ -2,9 +2,9 @@
 import React from "react";
 
 // Components
-import { Repository } from "./Repository";
+import Repository from "./Repository";
 
-export const RepositoryList = React.memo(({ getRepositories }) => {
+const RepositoryList = React.memo(({ getRepositories }) => {
   // -------------------------------------------------
   // States
   // -------------------------------------------------
@@ -37,3 +37,5 @@ export const RepositoryList = React.memo(({ getRepositories }) => {
     </div>
   );
 });
+
+export default RepositoryList

@@ -1,4 +1,4 @@
-export const FabButton = (props) => (
+const FabButton = (props) => (
   // -------------------------------------------------
   // Return
   // -------------------------------------------------
@@ -9,3 +9,5 @@ export const FabButton = (props) => (
     <i className="fas fa-heart" aria-hidden="true"></i>
   </button>
 );
+
+export default FabButton

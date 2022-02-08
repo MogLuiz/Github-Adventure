@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 
 // Components
-import { HeadCounter } from "./Components/Counter";
-import { FabButton } from "./Components/FabButton";
-import Navbar from "./Components/Navbar";
+// import  CounterComponent from "./Components/Counter";
+// import FabButton from "./Components/FabButton";
+// import Navbar from "./Components/Navbar";
+
+import { CounterComponent, FabButtonComponent, NavbarComponent } from "./Components"
 
 // Services
 import { likesCounter } from "./Services/expensiveCalculation";
@@ -33,9 +35,9 @@ function App() {
   // -------------------------------------------------
   return (
     <div style={theme} className="App">
-      <Navbar theme={theme.navbar} toogleDarkmode={toogleDarkmode} />
-      <HeadCounter likes={likes} />
-      <FabButton totalLikes={totalLikes} setTotalLikes={setTotalLikes} />
+      <NavbarComponent theme={theme.navbar} toogleDarkmode={toogleDarkmode} />
+      <CounterComponent likes={likes} />
+      <FabButtonComponent totalLikes={totalLikes} setTotalLikes={setTotalLikes} />
     </div>
   );
 }

@@ -19,4 +19,4 @@ const Repository = (result) => (
   </div>
 );
 
-export { Repository };
+export default Repository 
