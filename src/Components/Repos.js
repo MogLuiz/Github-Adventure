@@ -11,6 +11,7 @@ const ReposComponent = ({ getGithubRepositorie }) => {
   // -------------------------------------------------
 
   const [items, setItems] = useState([])
+  const [query, setQuery] = useState("facebook")
 
   // -------------------------------------------------
   // Hooks
