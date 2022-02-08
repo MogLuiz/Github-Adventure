@@ -7,6 +7,8 @@ import { CounterComponent, FabButtonComponent, NavbarComponent } from "./Compone
 // Services
 import { likesCounter } from "./Services/expensiveCalculation";
 
+const URL = "https://api.github.com/search/repositories"
+
 function App() {
   // -------------------------------------------------
   // State
@@ -15,8 +17,11 @@ function App() {
   const [dark, setDark] = useState(false);
 
   // -------------------------------------------------
-  // Constants
+  // Hooks
   // -------------------------------------------------
+
+  const getGithubRepositorie = fetch(`${URL}?q=facebook`)
+
   const likes = useMemo(() => likesCounter(totalLikes), [totalLikes])
 
   const theme = useMemo(() => ({
@@ -27,6 +32,9 @@ function App() {
 
   useEffect(() => console.log("Dark Theme Change"), [theme])
 
+  // -------------------------------------------------
+  // Functions
+  // -------------------------------------------------
   const toogleDarkmode = () => setDark(!dark);
   // -------------------------------------------------
   // Return
