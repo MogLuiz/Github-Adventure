@@ -1,6 +1,8 @@
 // Packages
 import React, { useEffect, useState } from 'react';
 
+import { RepositoryComponent } from "."
+
 
 const ReposComponent = ({ getGithubRepositorie }) => {
   // -------------------------------------------------
@@ -19,7 +21,14 @@ const ReposComponent = ({ getGithubRepositorie }) => {
         .then((data) => setItems((data && data.items) || []))
   }, [getGithubRepositorie])
 
-  return <div />;
+  return (
+    <div className="list">
+        {
+            items && 
+               items.map((result) => <RepositoryComponent key={result.id} {...result}/> ) 
+        }
+    </div>
+  )
 }
 
 export default ReposComponent
